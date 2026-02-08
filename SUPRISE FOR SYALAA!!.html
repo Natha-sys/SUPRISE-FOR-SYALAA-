@@ -110,6 +110,16 @@ button:hover { background:white; color:black; transform:scale(1.05); }
   <button id="gakPeduli" onclick="sad()">Gak peduli, wlee</button>
 </section>
 
+<!-- GAK PEDULI HALAMAN -->
+<section id="sadPage" class="page">
+  <div style="text-align:center;">
+    <img id="sadBunny" src="StickersBunny/bunny2.webp" style="max-width:200px; margin-bottom:20px;">
+    <p style="font-size:1.2rem; margin-bottom:20px;">Oh gitu. OK, kita gak temenan lagi</p>
+    <button onclick="backStart()" style="padding:12px 28px; border:1px solid white; color:white; cursor:pointer; border-radius:999px; transition:all .3s;">Iya iyaaa, Syliat</button>
+  </div>
+</section>
+
+
 <section id="menu" class="page">
   <h1>Pilih satu yaaap</h1>
   <button onclick="openPhoto()">Foto-foto Syalaa</button>
@@ -179,9 +189,13 @@ function openKarya(){ show("karya"); }
 function openPesan(){ show("pesan"); }
 
 function sad(){
+  // animasi tombol
   const btn = document.getElementById("gakPeduli");
-  btn.style.transform="scale(0.5)";
-  btn.style.opacity="0.4";
+  btn.style.transform = "scale(0.5)";
+  btn.style.opacity = "0.4";
+  
+  // tampilkan halaman baru "gak peduli"
+  show("sadPage");
 }
 
 /* FOTO THUMBNAIL */
