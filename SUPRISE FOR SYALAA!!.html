@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nanat Punya Sesuatu</title>
+
+<style>
+* { box-sizing:border-box; margin:0; padding:0; font-family:"Georgia", serif; }
+body {
+  min-height:100vh;
+  background-image: url("https://wallpapers-clan.com/wp-content/uploads/2024/04/butterflies-pink-clouds-gif-desktop-wallpaper-preview.gif");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow-x: hidden;
+}
+.page {
+  position: fixed;
+  inset:0;
+  width:100%;
+  height:100vh;
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  text-align:center;
+}
+.page.active { display:flex; }
+
+h1 {
+  font-size: clamp(2rem,6vw,4rem);
+  margin-bottom:30px;
+  transition: color 0.3s;
+}
+h1:hover { color: #ffd9ec; }
+
+button {
+  background:none;
+  border:1px solid white;
+  color:white;
+  padding:12px 28px;
+  margin:10px;
+  font-size:1rem;
+  cursor:pointer;
+  transition: all 0.3s;
+}
+button:hover { background:white; color:black; transform:scale(1.05); }
+
+#gakPeduli { transition: transform 0.5s, opacity 0.5s; }
+
+.main-photo-wrapper {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:20px;
+}
+.main-photo {
+  max-width:80%;
+  max-height:70vh;
+  border-radius:18px;
+  transition: opacity 0.5s;
+}
+.nav-btn {
+  font-size:2.5rem;
+  border:none;
+  background:none;
+  color:white;
+  cursor:pointer;
+}
+
+.thumbnail-wrapper { overflow-x:auto; width:100%; }
+.thumbnail-strip {
+  display:flex;
+  gap:12px;
+  padding:10px;
+  width:max-content;
+}
+.thumbnail-strip img {
+  height:80px;
+  border-radius:10px;
+  cursor:pointer;
+  opacity:0.6;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.thumbnail-strip img:hover { opacity:1; transform:scale(1.05); }
+
+.sticker {
+  position:fixed;
+  width:60px;
+  pointer-events:none;
+  opacity:0.9;
+}
+
+@media (max-width:600px){
+  .thumbnail-strip img { height:60px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stickers"></div>
+
+<section id="start" class="page active">
+  <h1>Nanat punya sesuatu untuk Syalaa</h1>
+  <button onclick="goMenu()">Mau liat</button>
+  <button id="gakPeduli" onclick="sad()">Gak peduli, wlee</button>
+</section>
+
+<section id="menu" class="page">
+  <h1>Pilih satu yaaap</h1>
+  <button onclick="openPhoto()">Foto-foto Syalaa</button>
+  <button onclick="openKarya()">Karya-karya Syalaa</button>
+  <button onclick="openPesan()">Pesan untuk Syalaa</button>
+  <br><br>
+  <button onclick="backStart()">Kembali</button>
+</section>
+
+<section id="foto" class="page">
+  <div class="main-photo-wrapper">
+    <button class="nav-btn" onclick="prevPhoto()">‹</button>
+    <img id="mainPhoto" class="main-photo" src="Foto Syala/foto (1).jpg">
+    <button class="nav-btn" onclick="nextPhoto()">›</button>
+  </div>
+  <div class="thumbnail-wrapper">
+    <div id="thumbPhoto" class="thumbnail-strip"></div>
+  </div>
+  <br>
+  <button onclick="goMenu()">Kembali</button>
+</section>
+
+<section id="karya" class="page">
+  <div class="main-photo-wrapper">
+    <button class="nav-btn" onclick="prevKarya()">‹</button>
+    <img id="mainKarya" class="main-photo" src="Karya Syala/karya (1).jpg">
+    <button class="nav-btn" onclick="nextKarya()">›</button>
+  </div>
+  <div class="thumbnail-wrapper">
+    <div id="thumbKarya" class="thumbnail-strip"></div>
+  </div>
+  <br>
+  <button onclick="goMenu()">Kembali</button>
+</section>
+
+<section id="pesan" class="page">
+  <h3 style="color: gray">Hai haii, Syala tau ndaa? kalau Syala tuh "aset" yang paling Nanat lindungii, Nanat sayangii, dan yang PALLINGGG NANATT CINTAIIII.
+    Nanat mencintai Syala bukan cuman dari wajah Syala ajaa, tapi dari sifatnya jugaa (Syalaaa tuh orangnya BAIKKK BANGETTTT)
+    Nanat awal mula suka sama Syala tuh bukan pas kita cosplayy, tapi pas Nanat sakit terus Syala pedulii sama Nanatt 
+  </h3>
+  <img src="AwalMula.jpg" alt="Awal mula rasa cinta terbentuk" width="300">
+  <h3 style="color: gray">Tanpa chat itu, mungkin kita gak akan sedekat ini...
+    Nanat berterima kasih banget karena Syala udah ada di hidup Nanatt, Nanat jadi lebih fokus memperbaiki diri, lebih rajin sholat, dan jadi suka baca novel.
+    Selain Nanat yang berkembang, Syala juga harus berkembang yaaa!! Syala punya bakat yang baguss bangett di senii, jadi perdalam lagi yaa ilmu seni nyaa.
+    Nanat akan terus dukung Syala meraih mimpinyaa, dan bahkan Nanat pernah berfikir gimana ya kalau nanti kita menikah?? itu hanya pemikiran anak SMA,
+    tapi.. semoga kejadian yaa, aamiin. Syala itu tumbuh dengan sedikitnya peran ayah, dan yang bisa Nanat bantu pun sedikit, dan gak bisa mengobati luka lama.
+    Nanat akan selalu ada di sisi Syala saat Syala butuh, Nanat gak mau ninggalin Syala. Pastinya berat banget kehidupan masa kecil sampai remaja tanpa peran ayah,
+    tetep semangat yaa sayangg!! Nanat akan terus berusaha buat Syalaa, jadi Syala jangan menyerah yaa!! -Nanat
+  </h3>
+  <button onclick="goMenu()">Kembali</button>
+</section>
+
+<script>
+let photoIndex=1, karyaIndex=1;
+const totalFoto=70, totalKarya=29;
+
+function show(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  randomSticker();
+}
+
+function goMenu(){ show("menu"); }
+function backStart(){ show("start"); }
+function openPhoto(){ show("foto"); }
+function openKarya(){ show("karya"); }
+function openPesan(){ show("pesan"); }
+
+function sad(){
+  const btn = document.getElementById("gakPeduli");
+  btn.style.transform="scale(0.5)";
+  btn.style.opacity="0.4";
+}
+
+/* FOTO THUMBNAIL */
+const thumbPhoto=document.getElementById("thumbPhoto");
+for(let i=1;i<=totalFoto;i++){
+  let img=document.createElement("img");
+  img.src=`Foto Syala/foto (${i}).jpg`;
+  img.onclick=()=>changePhoto(i);
+  thumbPhoto.appendChild(img);
+}
+
+function changePhoto(i){
+  photoIndex=i;
+  const main=document.getElementById("mainPhoto");
+  main.style.opacity=0;
+  setTimeout(()=>{main.src=`Foto Syala/foto (${i}).jpg`; main.style.opacity=1;},150);
+}
+
+function nextPhoto(){ changePhoto(photoIndex>=totalFoto?1:photoIndex+1); }
+function prevPhoto(){ changePhoto(photoIndex<=1?totalFoto:photoIndex-1); }
+
+/* KARYA THUMBNAIL */
+const thumbKarya=document.getElementById("thumbKarya");
+for(let i=1;i<=totalKarya;i++){
+  let img=document.createElement("img");
+  img.src=`Karya Syala/karya (${i}).jpg`;
+  img.onclick=()=>changeKarya(i);
+  thumbKarya.appendChild(img);
+}
+
+function changeKarya(i){
+  karyaIndex=i;
+  const main=document.getElementById("mainKarya");
+  main.style.opacity=0;
+  setTimeout(()=>{main.src=`Karya Syala/karya (${i}).jpg`; main.style.opacity=1;},150);
+}
+function nextKarya(){ changeKarya(karyaIndex>=totalKarya?1:karyaIndex+1); }
+function prevKarya(){ changeKarya(karyaIndex<=1?totalKarya:karyaIndex-1); }
+
+/* STICKER ACAK */
+function randomSticker(){
+  const container=document.getElementById("stickers");
+  container.innerHTML="";
+  const count=4;
+  for(let i=0;i<count;i++){
+    let s=document.createElement("img");
+    s.src=`StickersBunny/bunny${Math.floor(Math.random()*10)+1}.webp`;
+    s.className="sticker";
+    s.style.top=Math.random()*80+"vh";
+    s.style.left=(Math.random()<0.5?2:90)+"vw";
+    container.appendChild(s);
+  }
+}
+
+/* KEYBOARD CONTROL */
+document.addEventListener("keydown",e=>{
+  if(document.getElementById("foto").classList.contains("active")){
+    if(e.key==="ArrowRight") nextPhoto();
+    if(e.key==="ArrowLeft") prevPhoto();
+  }
+  if(document.getElementById("karya").classList.contains("active")){
+    if(e.key==="ArrowRight") nextKarya();
+    if(e.key==="ArrowLeft") prevKarya();
+  }
+});
+</script>
+
+</body>
+</html>
